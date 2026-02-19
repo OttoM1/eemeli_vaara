@@ -1,489 +1,623 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="rgb(14,14,15)">
-    <link rel="stylesheet" href="loader.css">
-        <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="rgb(14,14,15)" />
+    <link rel="stylesheet" href="loader.css" />
+    <link rel="stylesheet" href="styles.css" />
 
     <title>Kontsaklubi</title>
-    <meta name="description" content="Pohjois-Suomen oma lyhytvideotoimisto.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Pohjois-Suomen oma lyhytvideotoimisto." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-/*nopeet fixit tähän*/
+      /*nopeet fixit tähän*/
+
+      @media screen and (max-width: 768px) {
+        .why-box {
+          margin-top: -8svh;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="loader">
-
-
-
-       
-        <div class="loader-wordmark">
-            <span>K</span><span>O</span><span>N</span><span>T</span><span>S</span><span>A</span><span>K</span><span>L</span><span>U</span><span>B</span><span>I</span>
-        </div>
-        <div class="loader-bar"></div>
-        <div class="loader-num" id="loader-num">000</div>
-    
-    
-    
+      <div class="loader-wordmark">
+        <span>K</span><span>O</span><span>N</span><span>T</span><span>S</span
+        ><span>A</span><span>K</span><span>L</span><span>U</span><span>B</span
+        ><span>I</span>
+      </div>
+      <div class="loader-bar"></div>
+      <div class="loader-num" id="loader-num">000</div>
     </div>
-
-
 
     <nav id="nav">
-        <span id="navTitle">KONTSA<span>KLUBI</span></span>
-        <ul>
-            <li><a href="#section-about">Meistä</a></li>
-            <li><a href="#section-team">Tiimi</a></li>
-            <li><a href="#section-work">Projektit</a></li>
-            <li><a href="#section-pricing">Hinnat</a></li>
-            <li><a href="#section-contact">Yhteystiedot</a></li>
-        </ul>
+      <span id="navTitle">KONTSA<span>KLUBI</span></span>
+      <ul>
+        <li><a href="#section-about">Meistä</a></li>
+        <li><a href="#section-team">Tiimi</a></li>
+        <li><a href="#section-work">Projektit</a></li>
+        <li><a href="#section-pricing">Hinnat</a></li>
+        <li><a href="#section-contact">Yhteystiedot</a></li>
+      </ul>
     </nav>
-
-
 
     <button class="menu-toggle" id="menuToggle" aria-label="Avaa valikko">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
 
-
-
-
-
     <nav id="navMobile">
+      <a href="#section-hero" onclick="closeMenu()">
         <span id="navMobileTitle">KONTSA<span>KLUBI</span></span>
-        <ul>
-            <li><a href="#section-about" onclick="closeMenu()">Meistä</a></li>
-            <li><a href="#section-team" onclick="closeMenu()">Tiimi</a></li>
-            <li><a href="#section-work" onclick="closeMenu()">Projektit</a></li>
-            <li><a href="#section-pricing" onclick="closeMenu()">Hinnat</a></li>
-            <li><a href="#section-contact" onclick="closeMenu()">Yhteystiedot</a></li>
-        </ul>
+      </a>
+      <ul>
+        <li>
+          <a href="#section-about" onclick="closeMenu()">Meistä</a>
+        </li>
+        <li><a href="#section-team" onclick="closeMenu()">Tiimi</a></li>
+        <li><a href="#section-work" onclick="closeMenu()">Projektit</a></li>
+        <li><a href="#section-pricing" onclick="closeMenu()">Hinnat</a></li>
+        <li>
+          <a href="#section-contact" onclick="closeMenu()">Yhteystiedot</a>
+        </li>
+      </ul>
     </nav>
 
-
-
-
     <section id="section-hero">
-        <div id="hero-image"></div>
-        <span class="hero-eyebrow" style="opacity: 0; animation: generalBounce .7s ease-out forwards 1s;">Pohjois-Suomen oma lyhytvideotoimisto</span>
-        <h1 class="hero-title">
-            <span class="line" style="opacity: 0; animation: generalBounce .7s ease-out forwards 1.2s;">KONTSA</span>
-            <span class="line" style="opacity: 0; animation: generalBounce .7s ease-out forwards 1.5s;">KLUBI</span>
-        </h1>
-        <p class="hero-sub" style="opacity: 0; animation: generalYbounce .7s ease-out forwards 1.6s;">Videot jotka jäävät mieleen.</p>
-        <div class="hero-cta">
-            <a href="#section-contact" class="btn btn-primary" style="opacity: 0; animation: generalYbounce .7s ease-out forwards 1.8s;">Liity jäseneksi</a>
-            <a href="#section-work" class="btn btn-outline" style="opacity: 0; animation: generalYbounce .7s ease-out forwards 2s;">Meidän projektimme</a>
-        </div>
-        <div class="hero-scroll">
-            <span class="scroll-line"></span>
-            <span>Vieritä alas</span>
-        </div>
+      <div id="hero-image"></div>
+      <span
+        class="hero-eyebrow"
+        style="opacity: 0; animation: generalBounce 0.7s ease-out forwards 1s"
+        >Pohjois-Suomen oma lyhytvideotoimisto</span
+      >
+      <h1 class="hero-title">
+        <span
+          class="line"
+          style="
+            opacity: 0;
+            animation: generalBounce 0.7s ease-out forwards 1.2s;
+          "
+          >KONTSA</span
+        >
+        <span
+          class="line"
+          style="
+            opacity: 0;
+            animation: generalBounce 0.7s ease-out forwards 1.5s;
+          "
+          >KLUBI</span
+        >
+      </h1>
+      <p
+        class="hero-sub"
+        style="
+          opacity: 0;
+          animation: generalYbounce 0.7s ease-out forwards 1.6s;
+        "
+      >
+        Videot jotka jäävät mieleen.
+      </p>
+      <div class="hero-cta">
+        <a
+          href="#section-contact"
+          class="btn btn-primary"
+          style="
+            opacity: 0;
+            animation: generalYbounce 0.7s ease-out forwards 1.8s;
+          "
+          >Liity jäseneksi</a
+        >
+        <a
+          href="#section-work"
+          class="btn btn-outline"
+          style="
+            opacity: 0;
+            animation: generalYbounce 0.7s ease-out forwards 2s;
+          "
+          >Meidän projektimme</a
+        >
+      </div>
+      <div class="hero-scroll">
+        <span class="scroll-line"></span>
+        <span>Vieritä alas</span>
+      </div>
     </section>
-
 
     <div class="marquee-wrap">
-        <div class="marquee-track">
-            <span class="marquee-item">LYHYTVIDEO<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">SISÄLLÖNTUOTANTO<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">SOSIAALINEN MEDIA<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">BRÄNDITARINA<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">OULU &amp; LAPPI<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">LYHYTVIDEO<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">SISÄLLÖNTUOTANTO<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">SOSIAALINEN MEDIA<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">BRÄNDITARINA<span class="marquee-dot"> ·</span></span>
-            <span class="marquee-item">OULU &amp; LAPPI<span class="marquee-dot"> ·</span></span>
-        </div>
+      <div class="marquee-track">
+        <span class="marquee-item"
+          >LYHYTVIDEO<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >SISÄLLÖNTUOTANTO<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >SOSIAALINEN MEDIA<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >BRÄNDITARINA<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >OULU &amp; LAPPI<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >LYHYTVIDEO<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >SISÄLLÖNTUOTANTO<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >SOSIAALINEN MEDIA<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >BRÄNDITARINA<span class="marquee-dot"> ·</span></span
+        >
+        <span class="marquee-item"
+          >OULU &amp; LAPPI<span class="marquee-dot"> ·</span></span
+        >
+      </div>
     </div>
 
-
     <section id="section-about">
-        <div
-            style="position:absolute;top:0;left:0;width:100%;height:8svh;background:linear-gradient(to bottom,var(--bg),transparent);z-index:1;pointer-events:none;">
-        </div>
-        <div
-            style="position:absolute;bottom:0;left:0;width:100%;height:8svh;background:linear-gradient(to top,var(--bg),transparent);z-index:1;pointer-events:none;">
-        </div>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 8svh;
+          background: linear-gradient(to bottom, var(--bg), transparent);
+          z-index: 1;
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 8svh;
+          background: linear-gradient(to top, var(--bg), transparent);
+          z-index: 1;
+          pointer-events: none;
+        "
+      ></div>
 
-        <div style="position:relative;z-index:2;">
-            <span class="section-label reveal">01 — Meistä</span>
-            <h2 class="section-heading reveal stagger-1">Teemme videot<br>jotka jäävät<br><em
-                    style="font-family:var(--font-disp);font-style:normal;color:var(--blue);">mieleen.</em></h2>
+      <div style="position: relative; z-index: 2">
+        <span class="section-label reveal">01 — Meistä</span>
+        <h2 class="section-heading reveal stagger-1">
+          Teemme videot<br />jotka jäävät<br /><em
+            style="
+              font-family: var(--font-disp);
+              font-style: normal;
+              color: var(--blue);
+            "
+            >mieleen.</em
+          >
+        </h2>
 
-            <div class="about-layout">
-                <div class="about-left reveal stagger-2">
-                    <div class="stat-row">
-                        <div class="stat">
-             <div class="stat-num"><span class="counter" data-target="50">0</span><sup>+</sup></div>
-
-                            <span class="stat-label">Projektia</span>
-                        </div>
-                        <div class="stat">
-     <div class="stat-num"><span class="counter" data-target="3">0</span><sup></sup></div>
-
-                            <span class="stat-label">Tiimiläistä</span>
-                        </div>
-                        <div class="stat">
-
-                            <span class="stat-num">∞</span>
-                            <span class="stat-label">Luovuutta</span>
-                        </div>
-                    </div>
+        <div class="about-layout">
+          <div class="about-left reveal stagger-2">
+            <div class="stat-row">
+              <div class="stat">
+                <div class="stat-num">
+                  <span class="counter" data-target="50">0</span><sup>+</sup>
                 </div>
-                <div class="about-right reveal stagger-3">
-                    <p>Kontsaklubi on Pohjois-Suomen johtava lyhytvideotoimisto. Autamme brändejä ja yrityksiä
-                        tavoittamaan yleisönsä lyhytvideoiden voimin — TikTokissa, Instagramissa ja YouTubessa.</p>
-                    <p>Uskomme, että paras video on se joka tuntuu aidolta. Ei yliampuvaa mainoskieltä, vaan oikeita
-                        tarinoita oikeille ihmisille.</p>
+
+                <span class="stat-label">Projektia</span>
+              </div>
+              <div class="stat">
+                <div class="stat-num">
+                  <span class="counter" data-target="3">0</span><sup></sup>
                 </div>
+
+                <span class="stat-label">Tiimiläistä</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Luovuutta</span>
+              </div>
             </div>
+          </div>
+          <div class="about-right reveal stagger-3">
+            <p>
+              Kontsaklubi on Pohjois-Suomen johtava lyhytvideotoimisto. Autamme
+              brändejä ja yrityksiä tavoittamaan yleisönsä lyhytvideoiden voimin
+              — TikTokissa, Instagramissa ja YouTubessa.
+            </p>
+            <p>
+              Uskomme, että paras video on se joka tuntuu aidolta. Ei yliampuvaa
+              mainoskieltä, vaan oikeita tarinoita oikeille ihmisille.
+            </p>
+          </div>
         </div>
-        <div class="section-divider"></div>
+      </div>
+      <div class="section-divider"></div>
     </section>
 
+    <section id="section-work" style="min-height: auto; padding-bottom: 5rem">
+      <span class="section-label reveal">02 — Projektit</span>
+      <h2 class="section-heading reveal stagger-1">Aiempia<br />töitämme.</h2>
 
-
-
-    <section id="section-work" style="min-height:auto; padding-bottom:5rem;">
-        <span class="section-label reveal">02 — Projektit</span>
-        <h2 class="section-heading reveal stagger-1">Aiempia<br>töitämme.</h2>
-
-        <div id="cv-wrapper">
-            <div class="cv-item reveal">
-                <span class="cv-num">01</span>
-                <div class="cv-info">
-                    <h2>Duuni 1</h2>
-                    <span>Bränditarina · 2024</span>
-                </div>
-                <div class="cv-thumb">
-                    <img src="ui_assets/Oulu.jpg" alt="Duuni 1">
-                </div>
-                <span class="cv-arrow">→</span>
-            </div>
-            <div class="cv-item reveal stagger-1">
-                <span class="cv-num">02</span>
-                <div class="cv-info">
-                    <h2>Duuni 2</h2>
-                    <span>Lyhytvideo · 2024</span>
-                </div>
-                <div class="cv-thumb">
-                    <img src="ui_assets/IMG_6246.WEBP" alt="Duuni 2">
-                </div>
-                <span class="cv-arrow">→</span>
-            </div>
-            <div class="cv-item reveal stagger-2">
-                <span class="cv-num">03</span>
-                <div class="cv-info">
-                    <h2>Duuni 3</h2>
-                    <span>Sosiaalinen media · 2024</span>
-                </div>
-                <div class="cv-thumb">
-                    <img src="ui_assets/IMG_6244.jpg" alt="Duuni 3">
-                </div>
-                <span class="cv-arrow">→</span>
-            </div>
+      <div id="cv-wrapper">
+        <div class="cv-item reveal-right">
+          <span class="cv-num">01</span>
+          <div class="cv-info">
+            <h2>Duuni 1</h2>
+            <span>Bränditarina · 2024</span>
+          </div>
+          <div class="cv-thumb">
+            <img src="ui_assets/Oulu.jpg" alt="Duuni 1" />
+          </div>
+          <span class="cv-arrow">→</span>
         </div>
+        <div class="cv-item reveal-right stagger-1">
+          <span class="cv-num">02</span>
+          <div class="cv-info">
+            <h2>Duuni 2</h2>
+            <span>Lyhytvideo · 2024</span>
+          </div>
+          <div class="cv-thumb">
+            <img src="ui_assets/IMG_6246.WEBP" alt="Duuni 2" />
+          </div>
+          <span class="cv-arrow">→</span>
+        </div>
+        <div class="cv-item reveal-right stagger-2">
+          <span class="cv-num">03</span>
+          <div class="cv-info">
+            <h2>Duuni 3</h2>
+            <span>Sosiaalinen media · 2024</span>
+          </div>
+          <div class="cv-thumb">
+            <img src="ui_assets/IMG_6244.jpg" alt="Duuni 3" />
+          </div>
+          <span class="cv-arrow">→</span>
+        </div>
+      </div>
 
-        <div class="section-divider"></div>
+      <div class="section-divider"></div>
     </section>
 
+    <section
+      id="section-why"
+      style="min-height: 60svh; padding: clamp(4rem, 8vw, 7rem) var(--px)"
+    >
+      <img class="why-img" src="ui_assets/trans.png" alt="" />
 
-    <section id="section-why" style="min-height:60svh;padding:clamp(4rem,8vw,7rem) var(--px);">
-        <img class="why-img" src="ui_assets/trans.png" alt="">
-        <div class="why-box reveal">
-            <span class="why-label">Miksi me</span>
-            <h2 class="why-title">TEHOKKUUS<br><em>TEHOKKUUS</em><br>TEHOKKUUS</h2>
-        </div>
+      <div class="why-box">
+        <span class="why-label">Miksi me</span>
+        <h2 class="why-title">
+          TEHOKKUUS<br /><em>TEHOKKUUS</em><br />TEHOKKUUS
+        </h2>
+      </div>
+
+      <div id="some-wrapper">
+        <a id="ig" href="#" class="fab fa-instagram"></a>
+        <a id="sc" href="#" class="fab fa-snapchat"></a>
+        <a id="tt" href="#" class="fab fa-tiktok fa-2x"></a>
+      </div>
     </section>
 
+    <section id="section-team" style="min-height: auto; padding-bottom: 5rem">
+      <span class="section-label reveal">03 — Tiimi</span>
+      <h2 class="section-heading reveal stagger-1">Meidän<br />tiimi.</h2>
 
-
-
-
-    <section id="section-team" style="min-height:auto; padding-bottom:5rem;">
-        <span class="section-label reveal">03 — Tiimi</span>
-        <h2 class="section-heading reveal stagger-1">Meidän<br>tiimi.</h2>
-
-        <div class="team-grid">
-            <div class="team-card reveal stagger-1">
-                <div class="team-card-img">
-                    <img src="ui_assets/IMG_6236.JPG" alt="Eemeli Vaara"
-                        onerror="this.parentNode.innerHTML='<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'">
-                </div>
-                <div class="team-card-info">
-                    <div class="team-card-name">EEMELI VAARA</div>
-                    <div class="team-card-role">Luova johtaja</div>
-                </div>
-            </div>
-            <div class="team-card reveal stagger-2">
-                <div class="team-card-img">
-                    <img src="ui_assets/IMG_6237.JPG" alt="Atte Vuola"
-                        onerror="this.parentNode.innerHTML='<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'">
-                </div>
-                <div class="team-card-info">
-                    <div class="team-card-name">ATTE VUOLA</div>
-                    <div class="team-card-role">Kuvaaja</div>
-                </div>
-            </div>
-            <div class="team-card reveal stagger-3">
-                <div class="team-card-img">
-                    <img src="ui_assets/IMG_6236.JPG" alt="Tiimiläinen 3"
-                        onerror="this.parentNode.innerHTML='<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'">
-                </div>
-                <div class="team-card-info">
-                    <div class="team-card-name">TIIMILÄINEN 3</div>
-                    <div class="team-card-role">Leikkaaja</div>
-                </div>
-            </div>
+      <div class="team-grid">
+        <div class="team-card reveal stagger-1">
+          <div class="team-card-img">
+            <img
+              src="ui_assets/IMG_6236.JPG"
+              alt="Eemeli Vaara"
+              onerror="
+                this.parentNode.innerHTML =
+                  '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
+              "
+            />
+          </div>
+          <div class="team-card-info">
+            <div class="team-card-name">EEMELI VAARA</div>
+            <div class="team-card-role">Luova johtaja</div>
+          </div>
         </div>
+        <div class="team-card reveal stagger-2">
+          <div class="team-card-img">
+            <img
+              src="ui_assets/IMG_6237.JPG"
+              alt="Atte Vuola"
+              onerror="
+                this.parentNode.innerHTML =
+                  '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
+              "
+            />
+          </div>
+          <div class="team-card-info">
+            <div class="team-card-name">ATTE VUOLA</div>
+            <div class="team-card-role">Kuvaaja</div>
+          </div>
+        </div>
+        <div class="team-card reveal stagger-3">
+          <div class="team-card-img">
+            <img
+              src="ui_assets/IMG_6236.JPG"
+              alt="Tiimiläinen 3"
+              onerror="
+                this.parentNode.innerHTML =
+                  '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
+              "
+            />
+          </div>
+          <div class="team-card-info">
+            <div class="team-card-name">TIIMILÄINEN 3</div>
+            <div class="team-card-role">Leikkaaja</div>
+          </div>
+        </div>
+      </div>
 
-        <div class="section-divider"></div>
+      <div class="section-divider"></div>
     </section>
 
+    <section
+      id="section-pricing"
+      style="min-height: auto; padding-bottom: 5rem"
+    >
+      <span class="section-label reveal">04 — Hinnat</span>
+      <h2 class="section-heading reveal stagger-1">Selkeät<br />hinnat.</h2>
+      <p class="pricing-intro reveal stagger-2">
+        Ei piilokustannuksia, ei yllätyksiä. Valitse paketti joka sopii sinulle
+        — tai räätälöidään yhdessä.
+      </p>
 
-
-
-
-
-
-
-
-
-    <section id="section-pricing" style="min-height:auto; padding-bottom:5rem;">
-        <span class="section-label reveal">04 — Hinnat</span>
-        <h2 class="section-heading reveal stagger-1">Selkeät<br>hinnat.</h2>
-        <p class="pricing-intro reveal stagger-2">Ei piilokustannuksia, ei yllätyksiä. Valitse paketti joka sopii
-            sinulle — tai räätälöidään yhdessä.</p>
-
-        <div class="pricing-grid">
-            <div class="pricing-card reveal stagger-1">
-                <div class="pricing-tier">Starter</div>
-                <div class="pricing-price"><span class="counter" data-target="1250">0</span><sup>€</sup></div>
-                <div class="pricing-period">/ kuukausi</div>
-                <ul class="pricing-features">
-                    <li>2 lyhytvideota kuukaudessa</li>
-                    <li>Käsikirjoitus &amp; kuvaus</li>
-                    <li>Leikkaus &amp; värimäärittely</li>
-                    <li>1 revisiokausi</li>
-                </ul>
-                <a href="#section-contact" class="btn btn-ghost">Aloita tästä</a>
-            </div>
-
-            <div class="pricing-card featured reveal stagger-2">
-                <div class="pricing-tier">Suosituin</div>
-                <div class="pricing-price"><span class="counter" data-target="2000">0</span><sup>€</sup></div>
-                <div class="pricing-period">/ kuukausi</div>
-                <ul class="pricing-features">
-                    <li>5 lyhytvideota kuukaudessa</li>
-                    <li>Käsikirjoitus &amp; kuvaus</li>
-                    <li>Leikkaus, väri &amp; ääni</li>
-                    <li>Somestrategia</li>
-                    <li>3 revisiokautta</li>
-                </ul>
-                <a href="#section-contact" class="btn btn-primary">Valitse tämä</a>
-            </div>
-
-            <div class="pricing-card reveal stagger-3">
-                <div class="pricing-tier">Studio</div>
-                <div class="pricing-price"><span class="counter" data-target="3000">0</span><sup>€</sup></div>
-                <div class="pricing-period">/ kuukausi</div>
-                <ul class="pricing-features">
-                    <li>Rajoittamaton sisältö</li>
-                    <li>Oma sisältötiimi</li>
-                    <li>Koko somestrategia</li>
-                    <li>Analytiikka &amp; raportointi</li>
-                    <li>Unlimited revisiot</li>
-                </ul>
-                <a href="#section-contact" class="btn btn-ghost">Ota yhteyttä</a>
-            </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal stagger-1">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">
+            <span class="counter" data-target="1250">0</span><sup>€</sup>
+          </div>
+          <div class="pricing-period">/ kuukausi</div>
+          <ul class="pricing-features">
+            <li>2 lyhytvideota kuukaudessa</li>
+            <li>Käsikirjoitus &amp; kuvaus</li>
+            <li>Leikkaus &amp; värimäärittely</li>
+            <li>1 revisiokausi</li>
+          </ul>
+          <a href="#section-contact" class="btn btn-ghost">Aloita tästä</a>
         </div>
 
-        <div class="section-divider"></div>
-    </section>
-
-
-
-
-
-
-
-
-    <section id="section-contact" style="min-height:auto; padding-bottom:5rem;">
-        <span class="section-label reveal">05 — Yhteystiedot</span>
-        <h2 class="section-heading reveal stagger-1">Ota<br>yhteyttä.</h2>
-
-        <div class="contact-layout">
-            <div class="reveal-left">
-                <p class="contact-blurb">Haluatko lisätietoja tai tarjouksen? <em>Kirjoita meille</em> — vastaamme 24h
-                    sisällä.</p>
-                <div class="contact-detail">
-                    <div><a href="mailto:info@kontsaklubi.fi">info@kontsaklubi.fi</a></div>
-                    <div><span>+358 00 000 0000</span></div>
-                    <div><span>Oulu, Suomi</span></div>
-                </div>
-            </div>
-
-            <form class="contact-form reveal-right" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label>Nimesi</label>
-                    <input type="text" placeholder="Maija Meikäläinen" required>
-                </div>
-                <div class="form-group">
-                    <label>Sähköposti</label>
-                    <input type="email" placeholder="maija@yritys.fi" required>
-                </div>
-                <div class="form-group">
-                    <label>Palvelu</label>
-                    <select>
-                        <option value="">Valitse paketti</option>
-                        <option>Starter — 1 250€/kk</option>
-                        <option>Suosituin — 2 000€/kk</option>
-                        <option>Studio — 3 000€/kk</option>
-                        <option>Räätälöity</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Viestisi</label>
-                    <textarea placeholder="Kerro projektistasi..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary form-submit" id="submitBtn">Lähetä viesti</button>
-            </form>
+        <div class="pricing-card featured reveal stagger-2">
+          <div class="pricing-tier">Suosituin</div>
+          <div class="pricing-price">
+            <span class="counter" data-target="2000">0</span><sup>€</sup>
+          </div>
+          <div class="pricing-period">/ kuukausi</div>
+          <ul class="pricing-features">
+            <li>5 lyhytvideota kuukaudessa</li>
+            <li>Käsikirjoitus &amp; kuvaus</li>
+            <li>Leikkaus, väri &amp; ääni</li>
+            <li>Somestrategia</li>
+            <li>3 revisiokautta</li>
+          </ul>
+          <a href="#section-contact" class="btn btn-primary">Valitse tämä</a>
         </div>
+
+        <div class="pricing-card reveal stagger-3">
+          <div class="pricing-tier">Studio</div>
+          <div class="pricing-price">
+            <span class="counter" data-target="3000">0</span><sup>€</sup>
+          </div>
+          <div class="pricing-period">/ kuukausi</div>
+          <ul class="pricing-features">
+            <li>Rajoittamaton sisältö</li>
+            <li>Oma sisältötiimi</li>
+            <li>Koko somestrategia</li>
+            <li>Analytiikka &amp; raportointi</li>
+            <li>Unlimited revisiot</li>
+          </ul>
+          <a href="#section-contact" class="btn btn-ghost">Ota yhteyttä</a>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
     </section>
 
+    <section
+      id="section-contact"
+      style="min-height: auto; padding-bottom: 5rem"
+    >
+      <span class="section-label reveal">05 — Yhteystiedot</span>
+      <h2 class="section-heading reveal stagger-1">Ota<br />yhteyttä.</h2>
 
+      <div class="contact-layout">
+        <div class="reveal-left">
+          <p class="contact-blurb">
+            Haluatko lisätietoja tai tarjouksen? <em>Kirjoita meille</em> —
+            vastaamme 24h sisällä.
+          </p>
+          <div class="contact-detail">
+            <div>
+              <a href="mailto:info@kontsaklubi.fi">info@kontsaklubi.fi</a>
+            </div>
+            <div><span>+358 00 000 0000</span></div>
+            <div><span>Oulu, Suomi</span></div>
+          </div>
+        </div>
 
-
-
-
-
+        <form class="contact-form reveal-right" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>Nimesi</label>
+            <input type="text" placeholder="Maija Meikäläinen" required />
+          </div>
+          <div class="form-group">
+            <label>Sähköposti</label>
+            <input type="email" placeholder="maija@yritys.fi" required />
+          </div>
+          <div class="form-group">
+            <label>Palvelu</label>
+            <select>
+              <option value="">Valitse paketti</option>
+              <option>Starter — 1 250€/kk</option>
+              <option>Suosituin — 2 000€/kk</option>
+              <option>Studio — 3 000€/kk</option>
+              <option>Räätälöity</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Viestisi</label>
+            <textarea placeholder="Kerro projektistasi..."></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary form-submit"
+            id="submitBtn"
+          >
+            Lähetä viesti
+          </button>
+        </form>
+      </div>
+    </section>
 
     <footer>
-        <span class="footer-brand">KONTSA<span>KLUBI</span></span>
-        <span class="footer-copy">© 2025 Kontsaklubi · Oulu, Suomi</span>
+      <span class="footer-brand">KONTSA<span>KLUBI</span></span>
+      <span class="footer-copy">© 2025 Kontsaklubi · Oulu, Suomi</span>
     </footer>
 
     <script>
+      const loaderNum = document.getElementById("loader-num");
+      let count = 0;
+      const countIntr = setInterval(() => {
+        count = Math.min(count + Math.floor(Math.random() * 8) + 3, 100);
+        loaderNum.textContent = String(count).padStart(3, "0");
+        if (count >= 100) {
+          clearInterval(countIntr);
+          setTimeout(() => {
+            document.getElementById("loader").classList.add("done");
+          }, 500);
+        }
+      }, 28);
 
-const loaderNum = document.getElementById('loader-num');
-        let count = 0;
-        const countIntr = setInterval(() => {
-            count = Math.min(count + Math.floor(Math.random() * 8) + 3, 100);
-            loaderNum.textContent = String(count).padStart(3, '0');
-            if (count >= 100) {
-                clearInterval(countIntr);
-                setTimeout(() => {
-                    document.getElementById('loader').classList.add('done');
-                }, 500);
+      const nav = document.getElementById("nav");
+      window.addEventListener(
+        "scroll",
+        () => {
+          nav.classList.toggle("scrolled", window.scrollY > 40);
+        },
+        { passive: true },
+      );
+
+      const toggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("navMobile");
+
+      toggle.addEventListener("click", () => {
+        const isOpen = mobileNav.classList.toggle("active");
+
+        toggle.classList.toggle("open", isOpen);
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      });
+
+      function closeMenu() {
+        mobileNav.classList.remove("active");
+        toggle.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      const revealEls = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
             }
-        }, 28);
+          });
+        },
+        { threshold: 0.28, rootMargin: "0px 0px -40px 0px" },
+      );
+      revealEls.forEach((el) => observer.observe(el));
 
+      function animateCounter(el, target, duration = 1800) {
+        const num = parseInt(target);
+        if (isNaN(num)) return;
+        const start = performance.now();
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 4);
+          el.textContent = Math.round(eased * num).toLocaleString("fi-FI");
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }
 
+      const counterObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              animateCounter(e.target, e.target.dataset.target);
+              counterObs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      document
+        .querySelectorAll(".counter")
+        .forEach((c) => counterObs.observe(c));
 
+      function handleSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submitBtn");
+        btn.textContent = "Lähetetty ✓";
+        btn.style.background = "#0a6625";
+        btn.style.borderColor = "#0a6625";
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = "Lähetä viesti";
+          btn.style.background = "";
+          btn.style.borderColor = "";
+          btn.disabled = false;
+          e.target.reset();
+        }, 3500);
+      }
 
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 40);
-        }, { passive: true });
+      document.addEventListener("DOMContentLoaded", () => {
+        const target = document.querySelectorAll(".why-box");
 
+        const observerOptions = {
+          root: null,
+          threshold: 0.48,
+        };
 
-
-
-        const toggle = document.getElementById('menuToggle');
-        const mobileNav = document.getElementById('navMobile');
-
-        toggle.addEventListener('click', () => {
-            const isOpen = mobileNav.classList.toggle('active');
-            toggle.classList.toggle('open', isOpen);
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        function closeMenu() {
-            mobileNav.classList.remove('active');
-            toggle.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-
-
-
-
-        const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    observer.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.28, rootMargin: '0px 0px -40px 0px' });
-        revealEls.forEach(el => observer.observe(el));
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active-box");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
 
-
-
-
-
-
-        function animateCounter(el, target, duration = 1800) {
-            const num = parseInt(target);
-            if (isNaN(num)) return;
-            const start = performance.now();
-            const step = (now) => {
-                const progress = Math.min((now - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 4);
-                el.textContent = Math.round(eased * num).toLocaleString('fi-FI');
-                if (progress < 1) requestAnimationFrame(step);
-            };
-            requestAnimationFrame(step);
-        }
-
-        const counterObs = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    animateCounter(e.target, e.target.dataset.target);
-                    counterObs.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
-
-
-
-
-
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            btn.textContent = 'Lähetetty ✓';
-            btn.style.background = '#0a6625';
-            btn.style.borderColor = '#0a6625';
-            btn.disabled = true;
-            setTimeout(() => {
-                btn.textContent = 'Lähetä viesti';
-                btn.style.background = '';
-                btn.style.borderColor = '';
-                btn.disabled = false;
-                e.target.reset();
-            }, 3500);
-        }
+        target.forEach((el) => observer.observe(el));
+      });
     </script>
-</body>
-
+  </body>
 </html>
