@@ -138,7 +138,6 @@
       </div>
       <div class="hero-scroll">
         <span class="scroll-line"></span>
-        <span>Vieritä alas</span>
       </div>
     </section>
 
@@ -388,7 +387,7 @@
       </p>
 
       <div class="pricing-grid">
-        <div class="pricing-card reveal stagger-1">
+        <div class="pricing-card stagger-1">
           <div class="pricing-tier">Starter</div>
           <div class="pricing-price">
             <span class="counter" data-target="1250">0</span><sup>€</sup>
@@ -403,7 +402,7 @@
           <a href="#section-contact" class="btn btn-ghost">Aloita tästä</a>
         </div>
 
-        <div class="pricing-card featured reveal stagger-2">
+        <div class="pricing-card featured stagger-2">
           <div class="pricing-tier">Suosituin</div>
           <div class="pricing-price">
             <span class="counter" data-target="2000">0</span><sup>€</sup>
@@ -419,7 +418,7 @@
           <a href="#section-contact" class="btn btn-primary">Valitse tämä</a>
         </div>
 
-        <div class="pricing-card reveal stagger-3">
+        <div class="pricing-card stagger-3">
           <div class="pricing-tier">Studio</div>
           <div class="pricing-price">
             <span class="counter" data-target="3000">0</span><sup>€</sup>
@@ -461,18 +460,32 @@
           </div>
         </div>
 
-        <form class="contact-form reveal-right" onsubmit="handleSubmit(event)">
+        <form
+          id="contact"
+          class="contact-form reveal-right"
+          onsubmit="handleSubmit(event)"
+        >
           <div class="form-group">
             <label>Nimesi</label>
-            <input type="text" placeholder="Maija Meikäläinen" required />
+            <input
+              type="text"
+              id="nimi"
+              placeholder="Maija Meikäläinen"
+              required
+            />
           </div>
           <div class="form-group">
             <label>Sähköposti</label>
-            <input type="email" placeholder="maija@yritys.fi" required />
+            <input
+              type="email"
+              id="sposti"
+              placeholder="maija@yritys.fi"
+              required
+            />
           </div>
           <div class="form-group">
             <label>Palvelu</label>
-            <select>
+            <select id="palvelu">
               <option value="">Valitse paketti</option>
               <option>Starter — 1 250€/kk</option>
               <option>Suosituin — 2 000€/kk</option>
@@ -482,7 +495,10 @@
           </div>
           <div class="form-group">
             <label>Viestisi</label>
-            <textarea placeholder="Kerro projektistasi..."></textarea>
+            <textarea
+              id="viesti"
+              placeholder="Kerro projektistasi..."
+            ></textarea>
           </div>
           <button
             type="submit"
@@ -491,6 +507,13 @@
           >
             Lähetä viesti
           </button>
+
+          <div id="statusOk" class="status ok" role="status" aria-live="polite">
+            Kiitos yhteydenotosta! Vastaamme teille heti kun kerkeämme.
+          </div>
+          <div id="statusErr" class="status err" role="alert">
+            Viestin lähetys epäonnistui. Kokeile uudelleen hetken kuluttua.
+          </div>
         </form>
       </div>
     </section>
@@ -583,6 +606,7 @@
         .querySelectorAll(".counter")
         .forEach((c) => counterObs.observe(c));
 
+      /*
       function handleSubmit(e) {
         e.preventDefault();
         const btn = document.getElementById("submitBtn");
@@ -598,6 +622,7 @@
           e.target.reset();
         }, 3500);
       }
+*/
 
       document.addEventListener("DOMContentLoaded", () => {
         const target = document.querySelectorAll(".why-box");
@@ -619,5 +644,7 @@
         target.forEach((el) => observer.observe(el));
       });
     </script>
+
+    <script src="email.js"></script>
   </body>
 </html>
