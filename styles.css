@@ -346,7 +346,7 @@ display: flex;
             left: 0;
             width: 100%;
             height: 50%;
-            background-image: url(ui_assets/IMG_6235.JPG);
+            background-image: url(ui_assets/hero.jpg);
             background-position: center 30%;
             background-repeat: no-repeat;
             background-size: cover;
@@ -360,7 +360,7 @@ display: flex;
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(14, 14, 15, .4) 0%, transparent 40%, var(--bg) 100%);
+            background: linear-gradient(to bottom, rgba(41, 97, 238, 0.5) 0%, transparent 40%, var(--bg) 100%);
         }
 
         .hero-eyebrow {
@@ -533,7 +533,7 @@ height: 3em;
             content: '';
             position: absolute;
             inset: 0;
-            background-image: url(ui_assets/IMG_6238.JPG);
+            background-image: url(ui_assets/about.jpg);
             background-size: cover;
             background-position: center;
             opacity: .12;
@@ -726,14 +726,9 @@ height: 3em;
         .why-box {
             position: relative;
             z-index: 2;
-            border: 1px solid var(--border-blue);
-            padding: clamp(2rem, 5vw, 4rem) clamp(2.5rem, 6vw, 5.5rem);
             text-align: center;
-            background: rgba(14, 14, 15, .55);
             max-width: min(700px, 90%);
            
-backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
            transform:  scaleX(0);
             opacity: 0;
             transition: all .9s ease-out;
@@ -747,20 +742,27 @@ transform: scaleX(1);
 
 
         .why-label {
+            position: absolute;
+            top: 3%;
+            left: 0;
+            width: 100%;
+            text-align: center;
             display: block;
-            font-size: .58rem;
+            font-size: 2.5rem;
+            z-index: 999;
             font-weight: 400;
             letter-spacing: .3em;
             text-transform: uppercase;
-            color: var(--blue);
+            color: #ff5500;
+            filter: drop-shadow(0 0 2px black);
             margin-bottom: 1.2rem;
         }
 
         .why-title {
             font-family: var(--font-disp);
-            font-size: clamp(2.5rem, 9vw, 6.5rem);
-            letter-spacing: .04em;
-            line-height: .88;
+            font-size: clamp(2.3rem, 8vw, 6rem);
+            letter-spacing: .05em;
+            line-height: .95;
             color: var(--white);
             word-break: break-word;
         }
@@ -781,19 +783,20 @@ transform: scaleX(1);
             align-items: center;
             align-content: center;
             text-align: center;
-            position: absolute;
-            bottom: 0;
-            height: 8svh;
+            position: relative;
+            height: auto;
+            min-height: 12svh;
+            max-height: 400px;
             left: 0;
         }
 
 
         #tt, #ig, #sc {
             position: absolute;
-            text-shadow: 0 3px 8px #ff5500b6;
+            text-shadow: 0 3px 8px var(--blue);
             font-weight: bold;
-            bottom: 8px;
-                        color: aqua;
+            bottom: 1em;
+                        color: var(--border-blue);
                        
             font-size: 2.6em;
         }
@@ -810,6 +813,41 @@ transform: scaleX(1);
             left: 50%;
             transform: translateX(-50%);
         }
+
+
+
+
+
+#tt, #ig, #sc {
+    opacity: 0;
+    transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+#tt { transform: translateY(40px); }
+#ig { transform: translateY(40px); }
+#sc { transform: translate(-50%, 40px); }
+
+
+
+ #some-wrapper.in-view #tt {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .15s;
+}
+
+#some-wrapper.in-view #sc {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition-delay: 0.3s;
+}
+
+
+#some-wrapper.in-view #ig {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.45s;
+}
 
 
 
@@ -833,6 +871,7 @@ transform: scaleX(1);
 
         .team-card {
             position: relative;
+            margin-top: 2em;
                         padding-bottom: 10px;
 
         }
@@ -918,7 +957,7 @@ font-size: .95em;
             background: rgba(0, 0, 0, 0.9);
             border: 1px solid var(--border-blue);
             padding: 10px 10px;
-            border-radius: 10px;
+            border-radius: 6px;
         }
 
         .team-card-role {
@@ -1176,6 +1215,7 @@ font-size: .95em;
             gap: 1rem;
             background: var(--bg);
             padding-bottom: 4em;
+            height: auto;
         }
 
         .footer-brand {

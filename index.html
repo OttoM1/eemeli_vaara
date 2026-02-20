@@ -266,7 +266,7 @@
             <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
-            <img src="ui_assets/Oulu.jpg" alt="Duuni 1" />
+            <img src="ui_assets/oulu-opisto.jpg" alt="Duuni 1" />
           </div>
           <span class="cv-arrow">→</span>
         </div>
@@ -277,7 +277,7 @@
             <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
-            <img src="ui_assets/IMG_6246.WEBP" alt="Duuni 2" />
+            <img src="ui_assets/oulu2026.jpg" alt="Duuni 2" />
           </div>
           <span class="cv-arrow">→</span>
         </div>
@@ -288,7 +288,7 @@
             <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
-            <img src="ui_assets/IMG_6244.jpg" alt="Duuni 3" />
+            <img src="ui_assets/pullapirtti.jpg" alt="Duuni 3" />
           </div>
           <span class="cv-arrow">→</span>
         </div>
@@ -301,20 +301,17 @@
       id="section-why"
       style="min-height: 60svh; padding: clamp(4rem, 8vw, 7rem) var(--px)"
     >
-      <img class="why-img" src="ui_assets/trans.png" alt="" />
+      <img class="why-img" src="ui_assets/miksi-me.jpg" alt="" />
+
+              <span class="why-label">Miksi me ?</span>
 
       <div class="why-box">
-        <span class="why-label">Miksi me</span>
         <h2 class="why-title">
           TEHOKKUUS<br /><em>TEHOKKUUS</em><br />TEHOKKUUS
         </h2>
       </div>
 
-      <div id="some-wrapper">
-        <a id="ig" href="#" class="fab fa-instagram"></a>
-        <a id="sc" href="#" class="fab fa-snapchat"></a>
-        <a id="tt" href="#" class="fab fa-tiktok fa-2x"></a>
-      </div>
+      
     </section>
 
     <section id="section-team" style="min-height: auto; padding-bottom: 5rem">
@@ -332,7 +329,7 @@
               <p>Naps poks kops oee!</p>
             </div>
             <img
-              src="ui_assets/IMG_6236.JPG"
+              src="ui_assets/eemeli-vaara.jpg"
               alt="Eemeli Vaara"
               onerror="
                 this.parentNode.innerHTML =
@@ -358,7 +355,7 @@
               <p>Naps poks kops oee!</p>
             </div>
             <img
-              src="ui_assets/IMG_6237.JPG"
+              src="ui_assets/atte-leino.jpg"
               alt="Atte Leino"
               onerror="
                 this.parentNode.innerHTML =
@@ -381,7 +378,7 @@
             </div>
 
             <img
-              src="ui_assets/IMG_6236.JPG"
+              src="ui_assets/tiimi.jpg"
               alt="Tiimiläinen 3"
               onerror="
                 this.parentNode.innerHTML =
@@ -393,8 +390,8 @@
 
           </div>
           <div class="team-card-info">
-            <div class="team-card-name">TIIMILÄINEN 3</div>
-            <div class="team-card-role">Leikkaaja</div>
+            <div class="team-card-name">MIDÄN TIIMI</div>
+            <div class="team-card-role">oee</div>
           </div>
         </div>
       </div>
@@ -545,7 +542,15 @@
       </div>
     </section>
 
+
+    <div id="some-wrapper">
+      <a id="ig" href="#" class="fab fa-instagram"></a>
+      <a id="sc" href="#" class="fab fa-snapchat"></a>
+      <a id="tt" href="#" class="fab fa-tiktok fa-2x"></a>
+    </div>
+
     <footer>
+     
       <span class="footer-brand">KONTSA<span>KLUBI</span></span>
       <span class="footer-copy">© 2025 Kontsaklubi · Oulu, Suomi</span>
     </footer>
@@ -719,6 +724,42 @@ function Hover1(){
         target.forEach((el) => observer.observe(el));
       });
     </script>
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      // 1. Grab the wrapper that holds the icons
+      const wrapper = document.getElementById("some-wrapper");
+
+      // 2. Set up the observer options
+      const observerOptions = {
+        root: null, // use the viewport
+        rootMargin: "0px",
+        threshold: 0.2 // Trigger when 20% of the wrapper is visible
+      };
+
+      // 3. Create the observer
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Add the animation class
+            entry.target.classList.add("in-view");
+
+            // Optional: Stop observing once it has animated so it doesn't 
+            // re-animate every time you scroll up and down.
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // 4. Start observing the wrapper
+      if (wrapper) {
+        observer.observe(wrapper);
+      }
+    });
+</script>
 
     <script src="email.js"></script>
   </body>
