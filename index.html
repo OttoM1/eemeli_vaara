@@ -232,15 +232,15 @@
 
                 <span class="stat-label">Tiimiläistä</span>
               </div>
-              <div class="stat">
+            <!--  <div class="stat">
                 <span class="stat-num">∞</span>
                 <span class="stat-label">Luovuutta</span>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="about-right reveal stagger-3">
             <p>
-              Kontsaklubi on Pohjois-Suomen johtava lyhytvideotoimisto. Autamme
+              Kontsaklubi tähtää Pohjois-Suomen johtavaksi lyhytvideotoimistoksi. Haluamme auttaa
               brändejä ja yrityksiä tavoittamaan yleisönsä lyhytvideoiden voimin
               — TikTokissa, Instagramissa ja YouTubessa.
             </p>
@@ -262,8 +262,8 @@
         <div class="cv-item reveal-right">
           <span class="cv-num">01</span>
           <div class="cv-info">
-            <h2>Duuni 1</h2>
-            <span>Bränditarina · 2024</span>
+            <h2>Oulu-opisto</h2>
+            <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
             <img src="ui_assets/Oulu.jpg" alt="Duuni 1" />
@@ -273,8 +273,8 @@
         <div class="cv-item reveal-right stagger-1">
           <span class="cv-num">02</span>
           <div class="cv-info">
-            <h2>Duuni 2</h2>
-            <span>Lyhytvideo · 2024</span>
+            <h2>Oulu 2024</h2>
+            <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
             <img src="ui_assets/IMG_6246.WEBP" alt="Duuni 2" />
@@ -284,8 +284,8 @@
         <div class="cv-item reveal-right stagger-2">
           <span class="cv-num">03</span>
           <div class="cv-info">
-            <h2>Duuni 3</h2>
-            <span>Sosiaalinen media · 2024</span>
+            <h2>PullaPirtti</h2>
+            <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
             <img src="ui_assets/IMG_6244.jpg" alt="Duuni 3" />
@@ -323,7 +323,14 @@
 
       <div class="team-grid">
         <div class="team-card reveal stagger-1">
-          <div class="team-card-img">
+          <div class="team-card-img"  onclick="Hover1()">
+                        <small>Paina saadaksesi enemmän tietoa</small>
+
+            <div class="team-card-description" id="team-1">
+              <h2>Eemeli Vaara</h2>
+              <br>
+              <p>Naps poks kops oee!</p>
+            </div>
             <img
               src="ui_assets/IMG_6236.JPG"
               alt="Eemeli Vaara"
@@ -333,16 +340,26 @@
               "
             />
           </div>
+
+         
+
           <div class="team-card-info">
             <div class="team-card-name">EEMELI VAARA</div>
             <div class="team-card-role">Luova johtaja</div>
           </div>
         </div>
         <div class="team-card reveal stagger-2">
-          <div class="team-card-img">
+          <div class="team-card-img" onclick="Hover2()">
+                        <small>Paina saadaksesi enemmän tietoa</small>
+
+            <div class="team-card-description" id="team-2">
+              <h2>Atte Leino</h2>
+              <br>
+              <p>Naps poks kops oee!</p>
+            </div>
             <img
               src="ui_assets/IMG_6237.JPG"
-              alt="Atte Vuola"
+              alt="Atte Leino"
               onerror="
                 this.parentNode.innerHTML =
                   '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
@@ -350,12 +367,19 @@
             />
           </div>
           <div class="team-card-info">
-            <div class="team-card-name">ATTE VUOLA</div>
+            <div class="team-card-name">ATTE LEINO</div>
             <div class="team-card-role">Kuvaaja</div>
           </div>
         </div>
         <div class="team-card reveal stagger-3">
-          <div class="team-card-img">
+          <div class="team-card-img"  onclick="Hover3()">
+            <small>Paina saadaksesi enemmän tietoa</small>
+            <div class="team-card-description" id="team-3">
+              <h2>Eemeli Vaara</h2>
+              <br>
+              <p>Naps poks  oee!</p>
+            </div>
+
             <img
               src="ui_assets/IMG_6236.JPG"
               alt="Tiimiläinen 3"
@@ -364,6 +388,9 @@
                   '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
               "
             />
+
+           
+
           </div>
           <div class="team-card-info">
             <div class="team-card-name">TIIMILÄINEN 3</div>
@@ -453,7 +480,7 @@
           </p>
           <div class="contact-detail">
             <div>
-              <a href="mailto:info@kontsaklubi.fi">info@kontsaklubi.fi</a>
+              <a href="mailto:eemelivaara33@gmail.com">eemelivaara33@gmail.com</a>
             </div>
             <div><span>+358 00 000 0000</span></div>
             <div><span>Oulu, Suomi</span></div>
@@ -524,6 +551,54 @@
     </footer>
 
     <script>
+
+
+const teamDescription1 = document.getElementById("team-1");
+  const teamDescription2 = document.getElementById("team-2");
+  const teamDescription3 = document.getElementById("team-3");
+
+    teamDescription1.style.display = "none";
+      teamDescription2.style.display = "none";
+      teamDescription3.style.display = "none";
+
+function Hover1(){
+  if (teamDescription1.style.display === "none") {
+  
+  teamDescription1.style.display = "flex";
+      
+
+  } else {
+    teamDescription1.style.display = "none";
+       
+  }
+}
+
+  function Hover2() {
+    if (teamDescription2.style.display === "none") {
+
+      teamDescription2.style.display = "flex";
+
+
+    } else {
+      teamDescription2.style.display = "none";
+
+    }
+  }
+
+  function Hover3() {
+    if (teamDescription3.style.display === "none") {
+
+      teamDescription3.style.display = "flex";
+
+
+    } else {
+      teamDescription3.style.display = "none";
+
+    }
+  }
+
+
+
       const loaderNum = document.getElementById("loader-num");
       let count = 0;
       const countIntr = setInterval(() => {
