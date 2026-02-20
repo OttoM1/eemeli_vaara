@@ -11,25 +11,18 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         ::-webkit-scrollbar {
             display: none;
         }
-
         html {
             scroll-behavior: smooth;
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-
         /*    GLOBAALIT VÄRIT YMS    */
-
-
-
         p, h1, h2 {
             text-shadow: 0 3px 8px rgba(0, 0, 0, 0.603);
         }
-
         :root {
             --bg: #0e0e0f;
             --bg2: #161617;
@@ -40,14 +33,10 @@
             --orange: #ff5500;
             --border: rgba(244, 244, 242, 0.08);
             --border-hi: rgba(244, 244, 242, 0.18);
-            --font-disp: 'Bebas Neue', sans-serif;
-            --font-ser: 'Instrument Serif', serif;
-            --font-body: 'DM Sans', sans-serif;
             --nav-h: 68px;
             --px: clamp(1.25rem, 5vw, 5rem);
             --radius: 4px;
         }
-
         /*    SIVUN JUURI    */
         body {
             background: var(--bg);
@@ -57,28 +46,14 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-
         a {
             color: inherit;
             text-decoration: none;
         }
-
         img {
             display: block;
             max-width: 100%;
         }
-
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            pointer-events: none;
-            opacity: .022;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-size: 180px;
-        }
-
        
         /*    NAVIGOINTI - YLÄPALKKI   */
         #nav {
@@ -278,8 +253,6 @@ display: flex;
         .btn, .btn-ghost, .btn-primary, .team-card, .pricing-card {
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
         }
-
-
 
         .btn {
             display: inline-flex;
@@ -738,9 +711,6 @@ height: 3em;
             opacity: 1;
 transform: scaleX(1);     
 }
-
-
-
         .why-label {
             position: absolute;
             top: 3%;
@@ -771,8 +741,6 @@ transform: scaleX(1);
             font-style: normal;
             color: var(--blue);
         }
-
-
         #some-wrapper {
             display: flex;
             background: transparent;
@@ -789,16 +757,17 @@ transform: scaleX(1);
             max-height: 400px;
             left: 0;
         }
-
-
         #tt, #ig, #sc {
             position: absolute;
-            text-shadow: 0 3px 8px var(--blue);
-            font-weight: bold;
+            fill: var(--border-blue);         
+    filter: drop-shadow(0 3px 8px var(--blue)); 
+    
+    font-weight: bold;
             bottom: 1em;
                         color: var(--border-blue);
                        
-            font-size: 2.6em;
+width: 2.5em;        
+    height: 2.5em;
         }
 
         #tt {
@@ -813,11 +782,6 @@ transform: scaleX(1);
             left: 50%;
             transform: translateX(-50%);
         }
-
-
-
-
-
 #tt, #ig, #sc {
     opacity: 0;
     transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -848,13 +812,6 @@ transform: scaleX(1);
     transform: translateY(0);
     transition-delay: 0.45s;
 }
-
-
-
-
-
-
-
 
         /*     TIIMI  */
         #section-team {
@@ -926,11 +883,6 @@ font-size: .95em;
         .team-card-description h2, .team-card-description p {
             max-width: 96%;
         }
-
-
-
-
-
         .team-card-info {
             padding: 1rem 0 0;
         }
@@ -1223,7 +1175,6 @@ font-size: .95em;
             font-size: 1.1rem;
             letter-spacing: .08em;
         }
-
         .footer-brand span {
             color: var(--blue);
         }
@@ -1233,7 +1184,6 @@ font-size: .95em;
             letter-spacing: .1em;
             color: var(--white-dim);
         }
-
         /*  ANIMAATIOT  */
         @keyframes fadeUp {
             from {
@@ -1246,7 +1196,6 @@ font-size: .95em;
                 transform: translateY(0);
             }
         }
-
         @keyframes slideUp {
             from {
                 opacity: 0;
@@ -1258,7 +1207,6 @@ font-size: .95em;
                 transform: translateY(0);
             }
         }
-
          @keyframes scaleIn {
             from {
                 transform: scale(1.16);
@@ -1268,11 +1216,6 @@ font-size: .95em;
                 transform: scale(1);
             }
         }
-
-
-
-
-
         /*   LUOKKA-ANIMAATIOT   */
         .reveal {
             opacity: 0;
@@ -1324,24 +1267,16 @@ font-size: .95em;
         }
 
         /* SKAALAUTUVUUS  */
-
-
-
-
-
         @media (max-width:900px) {
             .about-layout {
                 grid-template-columns: 1fr;
             }
         }
-
-
         @media screen and (min-width: 769px) {
               .team-card-img small {
                     font-size: 1.3em;
                     }
         }
-
         @media (max-width:768px) {
             :root {
                 --nav-h: 56px;
@@ -1367,25 +1302,20 @@ font-size: .95em;
                 flex-direction: column;
                 max-width: 260px;
             }
-
             .btn {
                 justify-content: center;
                 width: 100%;
             }
-
             .hero-scroll {
                 display: none;
             }
-
             section {
                 padding-top: calc(var(--nav-h) + 2.5rem);
                 padding-bottom: 4rem;
             }
-
             .cv-item {
                 grid-template-columns: auto 1fr;
             }
-
             .cv-arrow {
                 display: none;
             }
@@ -1394,7 +1324,6 @@ font-size: .95em;
                     font-size: 3.2vw;
                     }
         }
-
         @media (max-width:520px) {
             .team-grid {
                 grid-template-columns: 1fr;
@@ -1418,15 +1347,12 @@ font-size: .95em;
                 width: clamp(60px, 14vw, 90px);
             }
         }
-
         @media (min-width:1200px) {
             #hero-image {
                 height: 55%;
                 background-position: center 28%;
             }
         }
-
-
         @keyframes generalBounce {
             0% {
                 transform: scale(.6) translateX(-3em);
@@ -1454,21 +1380,7 @@ font-size: .95em;
                 opacity: 1;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
         /*  EmailJS virheilmoitus  */
-
-
 .status {
     display: none;
     margin: 14px 0 0;
@@ -1476,13 +1388,11 @@ font-size: .95em;
     border-radius: 10px;
     font-size: 16px
 }
-
 .status.ok {
     background: rgba(46, 255, 119, 0.284);
     color: #a3f5c2;
     border: 1px solid var(--blue);
 }
-
 .status.err {
     background: rgba(255, 138, 162, 0.292);
     color: #ffdede;

@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-
+<link rel="preload" as="image" href="ui_assets/hero.jpg" fetchpriority="high" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
@@ -29,6 +28,12 @@
     <style>
       /*nopeet fixit tähän*/
 
+      :root {
+
+            --font-disp: 'Bebas Neue', sans-serif;
+            --font-ser: 'Instrument Serif', serif;
+            --font-body: 'DM Sans', sans-serif;
+      }
       @media screen and (max-width: 768px) {
         .why-box {
           margin-top: -8svh;
@@ -36,7 +41,6 @@
       }
     </style>
   </head>
-
   <body>
     <div id="loader">
       <div class="loader-wordmark">
@@ -47,7 +51,6 @@
       <div class="loader-bar"></div>
       <div class="loader-num" id="loader-num">000</div>
     </div>
-
     <nav id="nav">
       <span id="navTitle">KONTSA<span>KLUBI</span></span>
       <ul>
@@ -58,13 +61,11 @@
         <li><a href="#section-contact">Yhteystiedot</a></li>
       </ul>
     </nav>
-
     <button class="menu-toggle" id="menuToggle" aria-label="Avaa valikko">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-
     <nav id="navMobile">
       <a href="#section-hero" onclick="closeMenu()">
         <span id="navMobileTitle">KONTSA<span>KLUBI</span></span>
@@ -81,7 +82,6 @@
         </li>
       </ul>
     </nav>
-
     <section id="section-hero">
       <div id="hero-image"></div>
       <span
@@ -232,10 +232,6 @@
 
                 <span class="stat-label">Tiimiläistä</span>
               </div>
-            <!--  <div class="stat">
-                <span class="stat-num">∞</span>
-                <span class="stat-label">Luovuutta</span>
-              </div> -->
             </div>
           </div>
           <div class="about-right reveal stagger-3">
@@ -266,7 +262,7 @@
             <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
-            <img src="ui_assets/oulu-opisto.jpg" alt="Duuni 1" />
+            <img src="ui_assets/oulu-opisto.jpg" decoding="async" alt="Duuni 1" loading="lazy"/>
           </div>
           <span class="cv-arrow">→</span>
         </div>
@@ -277,7 +273,7 @@
             <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
-            <img src="ui_assets/oulu2026.jpg" alt="Duuni 2" />
+            <img src="ui_assets/oulu2026.jpg" decoding="async" alt="Duuni 2" loading="lazy"/>
           </div>
           <span class="cv-arrow">→</span>
         </div>
@@ -288,7 +284,7 @@
             <span>Lyhyt kuvaus? · 2024</span>
           </div>
           <div class="cv-thumb">
-            <img src="ui_assets/pullapirtti.jpg" alt="Duuni 3" />
+            <img src="ui_assets/pullapirtti.jpg" decoding="async" alt="Duuni 3" loading="lazy"/>
           </div>
           <span class="cv-arrow">→</span>
         </div>
@@ -301,7 +297,7 @@
       id="section-why"
       style="min-height: 60svh; padding: clamp(4rem, 8vw, 7rem) var(--px)"
     >
-      <img class="why-img" src="ui_assets/miksi-me.jpg" alt="" />
+      <img class="why-img" src="ui_assets/miksi-me.jpg" decoding="async" alt="why" loading="lazy" />
 
               <span class="why-label">Miksi me ?</span>
 
@@ -310,8 +306,6 @@
           TEHOKKUUS<br /><em>TEHOKKUUS</em><br />TEHOKKUUS
         </h2>
       </div>
-
-      
     </section>
 
     <section id="section-team" style="min-height: auto; padding-bottom: 5rem">
@@ -331,15 +325,14 @@
             <img
               src="ui_assets/eemeli-vaara.jpg"
               alt="Eemeli Vaara"
+              decoding="async"
+              loading="lazy"
               onerror="
                 this.parentNode.innerHTML =
                   '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
               "
             />
           </div>
-
-         
-
           <div class="team-card-info">
             <div class="team-card-name">EEMELI VAARA</div>
             <div class="team-card-role">Luova johtaja</div>
@@ -357,6 +350,8 @@
             <img
               src="ui_assets/atte-leino.jpg"
               alt="Atte Leino"
+              decoding="async"
+              loading="lazy"
               onerror="
                 this.parentNode.innerHTML =
                   '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
@@ -380,14 +375,13 @@
             <img
               src="ui_assets/tiimi.jpg"
               alt="Tiimiläinen 3"
+              decoding="async"
+              loading="lazy"
               onerror="
                 this.parentNode.innerHTML =
                   '<div style=\'width:100%;height:100%;background:#1e1e20;\'></div>'
               "
             />
-
-           
-
           </div>
           <div class="team-card-info">
             <div class="team-card-name">MIDÄN TIIMI</div>
@@ -541,14 +535,29 @@
         </form>
       </div>
     </section>
-
-
     <div id="some-wrapper">
-      <a id="ig" href="#" class="fab fa-instagram"></a>
-      <a id="sc" href="#" class="fab fa-snapchat"></a>
-      <a id="tt" href="#" class="fab fa-tiktok fa-2x"></a>
-    </div>
+      <a id="ig" href="#" >
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+        </svg>
+      </a>
+      
+      <a id="sc" href="#" >
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <title>Snapchat</title>
+          <path
+            d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z" />
+        </svg>
+      </a>
 
+      <a id="tt" href="#">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+        </svg>
+      </a>
+    </div>
     <footer>
      
       <span class="footer-brand">KONTSA<span>KLUBI</span></span>
@@ -556,8 +565,6 @@
     </footer>
 
     <script>
-
-
 const teamDescription1 = document.getElementById("team-1");
   const teamDescription2 = document.getElementById("team-2");
   const teamDescription3 = document.getElementById("team-3");
@@ -570,40 +577,25 @@ function Hover1(){
   if (teamDescription1.style.display === "none") {
   
   teamDescription1.style.display = "flex";
-      
-
   } else {
     teamDescription1.style.display = "none";
        
   }
 }
-
   function Hover2() {
     if (teamDescription2.style.display === "none") {
-
       teamDescription2.style.display = "flex";
-
-
     } else {
       teamDescription2.style.display = "none";
-
     }
   }
-
   function Hover3() {
     if (teamDescription3.style.display === "none") {
-
       teamDescription3.style.display = "flex";
-
-
     } else {
       teamDescription3.style.display = "none";
-
     }
   }
-
-
-
       const loaderNum = document.getElementById("loader-num");
       let count = 0;
       const countIntr = setInterval(() => {
@@ -686,24 +678,7 @@ function Hover1(){
         .querySelectorAll(".counter")
         .forEach((c) => counterObs.observe(c));
 
-      /*
-      function handleSubmit(e) {
-        e.preventDefault();
-        const btn = document.getElementById("submitBtn");
-        btn.textContent = "Lähetetty ✓";
-        btn.style.background = "#0a6625";
-        btn.style.borderColor = "#0a6625";
-        btn.disabled = true;
-        setTimeout(() => {
-          btn.textContent = "Lähetä viesti";
-          btn.style.background = "";
-          btn.style.borderColor = "";
-          btn.disabled = false;
-          e.target.reset();
-        }, 3500);
-      }
-*/
-
+   
       document.addEventListener("DOMContentLoaded", () => {
         const target = document.querySelectorAll(".why-box");
 
@@ -726,41 +701,29 @@ function Hover1(){
     </script>
 
 
-
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-      // 1. Grab the wrapper that holds the icons
       const wrapper = document.getElementById("some-wrapper");
 
-      // 2. Set up the observer options
       const observerOptions = {
-        root: null, // use the viewport
+        root: null, 
         rootMargin: "0px",
-        threshold: 0.2 // Trigger when 20% of the wrapper is visible
+        threshold: 0.2 
       };
-
-      // 3. Create the observer
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Add the animation class
             entry.target.classList.add("in-view");
-
-            // Optional: Stop observing once it has animated so it doesn't 
-            // re-animate every time you scroll up and down.
             observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
-      // 4. Start observing the wrapper
       if (wrapper) {
         observer.observe(wrapper);
       }
     });
 </script>
-
     <script src="email.js"></script>
   </body>
 </html>

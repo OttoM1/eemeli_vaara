@@ -6,9 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if(err) err.style.display = "none";
 });
 
-
-
-
 window.handleSubmit = async (e) => {
     e.preventDefault(); 
 
@@ -27,18 +24,11 @@ window.handleSubmit = async (e) => {
     submitBtn.disabled = true;
     submitBtn.textContent = "Lähetetään..."; 
 
-
-
-
-
-
     try {
 
         if (typeof emailjs === "undefined") {
             throw new Error("EmailJS script is not loaded.");
         }
-
-
 
         emailjs.init("#");
 
@@ -52,19 +42,12 @@ window.handleSubmit = async (e) => {
             message: document.getElementById("viesti")?.value || "Ei viestiä",
         };
 
-
-
-
-
         await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
         
         btn.textContent = "Lähetetty ✓";
         console.log("Success!");
         show(ok);
         form.reset(); 
-
-
-
 
     } catch (error) {
 
